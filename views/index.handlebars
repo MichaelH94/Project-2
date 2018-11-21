@@ -1,33 +1,66 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center title">TESTING GAMING SOCIAL MEDIA </h1>
     </div>
   </div>
-</div>
+  <br>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-6">
+      <div>
+        {{#each games}}
+          {{#unless this.beatGame}}
+            <div class="row">
+              <div class="col-md-9">
+              <div class="newGame">
+                <p class="text-center">
+                {{this.id}}. {{this.gameName}}
+                </p>
+              </div>
+              </div>
+              <div class="col-md-3">
+              <div>
+              <form action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="Game Beaten" value="true">
+                <button type="submit" class="center-block">Move Game to Completed</button>
+              </form>
+              </div>
+              </div>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-md-4">
+        {{#each games}}
+          {{#if this.gameBeaten}}
+            <div class="eaten">
+            <p class="text-center">
+              {{this.id}}. {{this.game_name}}
+            </p>
+            </div>
+          {{/if}}
+        {{/each}}
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <form class="create-update-form" action="/" method="POST">
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+        <div class="form-group">
+          {{!-- <label for="ca">Burger Name:</label> --}}
+          <input type="text" id="ca" name="name" class="center-block games_field">
+        </div>
+
+        <button type="submit" class="center-block btn btn-primary">POST CONTENT</button>
+        <p class="text-center">Add a new game and click the 'ADD GAME' button"</p>
+      </form>
+    </div>
+  </div>
+
+</div>
