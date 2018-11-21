@@ -4,3 +4,8 @@ exports.dbConfig = {
     db: process.env.DATABASE_DB,
     host: process.env.DATABASE_HOST
 }
+
+exports.igdbConfig = {
+    key: process.env.IGDB_API,
+    url: process.env.IGDB_URL
+}
