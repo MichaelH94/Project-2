@@ -6,26 +6,28 @@ const log = response => {
     console.log(response.url, JSON.stringify(response.body));
 };
 
-
 var game = "Dark Souls";
 
 
 client.games({
     limit: 5,
     offset: 0,
-    search: "Halo"
+    search: "Dark Souls"
 }, [
     'name',
-    'genre',
+    'genres',
     'rating',
-    'hypes'
+    'hypes',
+    'summary',
+    'esrb'
 ]).then(response => {
     let test = []
     test.push(JSON.stringify(response.body));
     test = JSON.parse(test)
     test = test[0]
-    console.log(test.id, test.name, test.rating)
+    console.log(test.genres)
 });
+
 
 
 // module.exports = igdbPull(game);
