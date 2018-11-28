@@ -6,7 +6,13 @@ module.exports = function(sequelize, DataTypes) {
         isUrl: true,
         allowNull: true
       },
-      timetobeat: DataTypes.INTEGER
+      timetobeat: DataTypes.INTEGER,
+      // commenting out the genre, unable to make it work and wasted too much time
+      // genre: DataTypes.STRING,
+      summary: DataTypes.TEXT,
+      hypes: DataTypes.INTEGER,
+      rating: DataTypes.INTEGER,
+      esrb: DataTypes.STRING
     });
   
     Games.associate = function(models) {
