@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         location: DataTypes.STRING,
         style: DataTypes.INTEGER,
-        genre: DataTypes.INTEGER,
+        genre: DataTypes.STRING,
         platform: DataTypes.INTEGER
     });
   

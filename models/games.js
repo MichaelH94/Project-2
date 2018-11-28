@@ -7,7 +7,8 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: true
       },
       timetobeat: DataTypes.INTEGER,
-      genre: DataTypes.STRING,
+      // commenting out the genre, unable to make it work and wasted too much time
+      // genre: DataTypes.STRING,
       summary: DataTypes.TEXT,
       hypes: DataTypes.INTEGER,
       rating: DataTypes.INTEGER,

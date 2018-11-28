@@ -1,12 +1,10 @@
-let hltb = require('howlongtobeat');
-let hltbService = new hltb.HowLongToBeatService();
-let placeholder = "dark souls"
+const hltb = require('howlongtobeat');
+const hltbService = new hltb.HowLongToBeatService();
+
 let timeToBeat = function hltbSearch(game) {
     hltbService.search(game).then(result => {
         console.log(result)
-
     })
 };
 
-timeToBeat(placeholder)
 module.exports = timeToBeat;
