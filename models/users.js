@@ -14,15 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         genre: DataTypes.STRING,
         platform: DataTypes.INTEGER
     });
-  
-    User.associate = function(models) {
-      // Associating User with Games
-      // When a User is deleted, also delete any associated Games
-      User.hasMany(models.Games, {
-        onDelete: "cascade"
-      });
-    };
-  
-    return User;
   };
 
+  return User;
+};
