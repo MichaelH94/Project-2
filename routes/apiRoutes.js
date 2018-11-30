@@ -1,24 +1,28 @@
-var db = require("../models");
+const express = require('express');
+const router = express.Router();
 
-module.exports = function(app) {
-  // Get all games
-  app.get("/api/games", function(req, res) {
-    db.game.findAll({}).then(function(dbgames) {
-      res.json(dbgames);
-    });
-  });
+const hltb = require("..models/hltb.js");
 
-  // Create a new game
-  app.post("/api/games", function(req, res) {
-    db.game.create(req.body).then(function(dbgames) {
-      res.json(dbgames);
-    });
-  });
 
-  // Delete an game by id
-  app.delete("/api/games/:id", function(req, res) {
-    db.game.destroy({ where: { id: req.params.id } }).then(function(dbgames) {
-      res.json(dbgames);
-    });
-  });
-};
+router.get("/game", (req, res) =>{ 
+  hltb.timeToBeat()
+})
+
+// incomplete, we need the front end routes completed
+
+
+const sequelize = require('sequelize');
+// i think we can just require the models folder instead of all these individually
+const models = require('../models')
+
+// var gamePost = {
+//   pull game info from frontend
+//   do htlb & igdb apisearch 
+//   push returned results into database
+// };
+
+// var userPost = {
+//   pull user info from frontend 
+//   push info into database
+// };
+
