@@ -1,13 +1,11 @@
 const mysql = require('mysql');
 const Sequelize = require('sequelize');
-var keys = require('./keys.js');
+const keys = require('./keys.js');
 
-var sequelize = new Sequelize("sequelize_library","root", "", {
+var connection = new Sequelize(keys.dbConfig.db, keys.dbConfig.user, keys.dbConfig.pass, {
    host: keys.dbConfig.host,
-   user: keys.dbConfig.user,
-   password: keys.dbConfig.pass,
-   database: keys.dbConfig.db,
    dialect: "mysql"
 });
 
-module.export = connection;
+connection.sync();
+module.exports = connection;
