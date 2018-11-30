@@ -1,6 +1,5 @@
 const connection = require('../config/connection');
 const sequelize = require ('sequelize')
-const params = username, password, name, age, location, style, genre, platform
 
 var User = connection.define("User", {
     // Giving the Users model a name of type STRING
@@ -50,31 +49,31 @@ var User = connection.define("User", {
       });
     }
 
-function createUser() {
+function createUser(username, password, name, age, location, style, genre, platform) {
     connection.sync().then(() => {
         User.create({
-            username: "Test",
-            password: "test",
-            name: "Test",
-            age: 24, 
-            location: "test",
-            style: 3,
-            genre: "test",
-            platform: 7
+            username: username,
+            password: password,
+            name: name,
+            age: age, 
+            location: location,
+            style: style,
+            genre: genre,
+            platform: platform
         });
     });
 };
 
-function createGame() {
+function createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb) {
     connection.sync().then(() => {
         Games.create({
-            name: "test",
-            imageUrl: "www.google.com",
-            timetobeat: "24",
-            summary: "test test test",
-            hypes: 10,
-            rating: 9,
-            esrb: "M"
+            name: name,
+            imageUrl: imageUrl,
+            timetobeat: timetobeat,
+            summary: summary,
+            hypes: hypes,
+            rating: rating,
+            esrb: esrb,
         });
     });
 };
