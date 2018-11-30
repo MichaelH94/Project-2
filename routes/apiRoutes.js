@@ -12,10 +12,8 @@ router.get("/game", (req, res) =>{
 
 
 const sequelize = require('sequelize');
-const game = require('../models/games.js')
-const user = require('../models/users.js')
-const hltb = require('../models/hltb.js')
-const igdb = require('../models/igdbapi.js')
+// i think we can just require the models folder instead of all these individually
+const models = require('../models')
 
 // var gamePost = {
 //   pull game info from frontend
