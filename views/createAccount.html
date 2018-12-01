@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div></div>
+    <div id="usernameField">
+      <label>Username: </label>
+      <input type="text" name="createUsername" required>
+    </div>
+    <div id="nameField">
+      <label>Name: </label>
+      <input type="text" name="name" required>
+    </div>
+    <div id="passwordField">
+      <label>Password: </label>
+      <input type="password" name="createPassword" required>
+    </div>
+    <div id="ageField">
+      <label>Age: </label>
+      <input type="number" name="age" required>
+    </div>
+    <div id="locationField">
+      <label>Location: </label>
+      <input type="text" name="location" required>
+    </div>
+
+    <p>Select play style:</p>
+    <form action="/action_page.php">
+      <select name="playStyle" size="1">
+        <option value="story">Just the Story</option>
+        <option value="storyPlusExtras">Story + Extras</option>
+        <option value="completionist">100% Completion</option>
+      </select>
+    </form>
+
+    <p>Select platform:</p>
+    <form action="/action_page.php">
+      <select name="platform" size="1">
+        <option value="PC">PC</option>
+        <option value="playstation">Playstation</option>
+        <option value="xbox">Xbox</option>
+      </select>
+    </form>
+    <button id="createAccount">Create Account</button>
+  </div>
+</body>
+
+</html>
