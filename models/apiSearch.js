@@ -68,3 +68,4 @@ function hltbSearch(game) {
 
 
 igdbSearch("Darkest Dungeon");
+app.addPost("test post goes here please work thank you")

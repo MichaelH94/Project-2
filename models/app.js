@@ -33,10 +33,24 @@ var User = connection.define("User", {
       rating: sequelize.INTEGER,
       esrb: sequelize.STRING
     });
+
+    var Posts = connection.define("Posts", {
+        body: {
+            type: sequelize.TEXT,
+            allowNull: false
+        }
+    });
+
     User.associate = () => {
         User.hasMany(Games, {
             onDelete: "cascade"
         });
+    };
+
+    User.associate = () => {
+        User.hasMany(Posts, { 
+            onDelete: "cascade"
+        })
     };
 
     Games.associate = () => {
@@ -47,7 +61,15 @@ var User = connection.define("User", {
           allowNull: false
         }
       });
-    }
+    };
+    
+    Posts.associate = () => {
+        Posts.belongsTo(User, { 
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
 let app = {
 createUser: (username, password, name, age, location, style, genre, platform) => {
@@ -79,27 +101,25 @@ createGame: (name, imageUrl, timetobeat, summary, hypes, rating, esrb) => {
             esrb: esrb,
         });
     });
+},
+
+deleteUser: (user) => {
+    connection.sync().then(() => {
+        User.destroy({
+            where: {
+                username: user
+            }
+        })
+    });
+    },
+
+addPost: (data) => {
+    connection.sync().then(() => {
+        Posts.create({
+            body: data
+        })
+    })
 }
-
-// function deleteUser() {
-//     connection.sync().then(() => {
-//         User.destroy({
-//             where: {
-//                 id: 1
-//             }
-//         })
-//     })
-// }
-
-// function deleteGame() {
-//     connection.sync().then(() => {
-//         Games.destroy({
-//             where: {
-//                 id: 1
-//             }
-//         });
-//     });
-// }
 }
 
 module.exports = app;
