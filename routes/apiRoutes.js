@@ -1,17 +1,16 @@
 const express = require('express');
+const apiSearch = require('../models/apiSearch');
+const app = require('../models/app');
 const router = express.Router();
+const sequelize = require('sequelize');
+// i think we can just require the models folder instead of all these individually
 
-const hltb = require("..models/hltb.js");
-
-
-router.get("/game", (req, res) =>{
-  hltb.timeToBeat()
-})
+router.get("/game", (req, res) =>{});
 
 //get one user
-router.get('api/Users/:id', (req, res)=>{});
+router.get('api/Users/:id', (req, res) => {});
 
-
+// Create user
 router.post('api/Users', (req, res)=>{
   //ajax info goes here
   res.send({
@@ -25,22 +24,3 @@ router.post('api/Users', (req, res)=>{
     platform: req.body.platform
   });
 });
-
-const sequelize = require('sequelize');
-// i think we can just require the models folder instead of all these individually
-const models = require('../models')
-
-
-// var gamePost = {
-//   pull game info from frontend
-//   do htlb & igdb apisearch
-//   push returned results into database
-// };
-
-
-
-// var userPost = {
-//   pull user info from frontend
-//   push info into database
-// };
-
