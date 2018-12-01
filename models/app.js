@@ -49,7 +49,8 @@ var User = connection.define("User", {
       });
     }
 
-function createUser(username, password, name, age, location, style, genre, platform) {
+let app = {
+createUser: (username, password, name, age, location, style, genre, platform) => {
     connection.sync().then(() => {
         User.create({
             username: username,
@@ -64,9 +65,9 @@ function createUser(username, password, name, age, location, style, genre, platf
 
         return;
     });
-};
+},
 
-function createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb) {
+createGame: (name, imageUrl, timetobeat, summary, hypes, rating, esrb) => {
     connection.sync().then(() => {
         Games.create({
             name: name,
@@ -78,7 +79,7 @@ function createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb) {
             esrb: esrb,
         });
     });
-};
+}
 
 // function deleteUser() {
 //     connection.sync().then(() => {
@@ -99,4 +100,6 @@ function createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb) {
 //         });
 //     });
 // }
+}
 
+module.exports = app;
