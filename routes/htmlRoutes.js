@@ -1,18 +1,17 @@
 var db = require("../models/app");
+const router = require('express').Router();
+const path = require('path');
 
-module.exports = function(app) {
-  // Load index page
-  // Render 404 page for any unmatched routes
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/login.html'));
+});
 
-  app.get('/', (req, res) => {
-    res.send('index.html');
-  });
+router.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/login.html'));
+});
 
-  app.get('/login', (req, res) => {
-    res.send('login.html');
-  });
+router.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, '/404.html'));
+});
 
-  app.get("*", function(req, res) {
-    res.send("404.html");
-  });
-};
+module.exports = router;
