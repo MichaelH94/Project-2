@@ -10,6 +10,10 @@ router.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
+router.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/createAccount.html'));
+});
+
 router.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, '/404.html'));
 });
