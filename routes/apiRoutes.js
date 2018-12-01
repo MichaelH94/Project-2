@@ -16,8 +16,19 @@ router.get('/login', (req, res) => {
 // Create user
 router.post('/create-account', (req, res)=>{
   console.log(req.body);
-  console.log("create account");
   res.json(req.body);
+  app.createUser(
+    req.body.username,
+    req.body.password,
+    req.body.name,
+    req.body.age,
+    req.body.location,
+    req.body.style,
+    req.body.platform
+    );
+});
+
+router.post('/homepage', (req, res) => {
 });
 
 module.exports = router;
