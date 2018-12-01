@@ -1,6 +1,5 @@
 var db = require("../models/app");
 
-
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
