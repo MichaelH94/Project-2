@@ -9,7 +9,7 @@ app.use(express.json());
 // app.use(express.static("views"));
 
 // Routes
-//const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes")
 
 app.use('/', htmlRoutes)
