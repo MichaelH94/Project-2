@@ -61,7 +61,3 @@ function hltbSearch(game) {
         app.createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb)
     });
 };
-
-
-
-igdbSearch("Darkest Dungeon");

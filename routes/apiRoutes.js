@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const hltb = require("..models/hltb.js");
-
-
 router.get("/game", (req, res) =>{
   hltb.timeToBeat()
 })

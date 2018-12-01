@@ -1,29 +1,10 @@
-var db = require("../models");
+const db = require("../models");
+const path = require('path');
 
 module.exports = function(app) {
-<<<<<<< HEAD
-  // Load index Page
-  app.get('/', (req, res) => {
-    res.render('index');
-  });
-
-  //Render login page
-  app.get('/login', (req, res) => {
-    res.render('login');
-  });
-
-  //render create account
-  app.get('/creatAccount', (req, res) => {
-    res.render('createAccount');
-=======
   // Load index page
   app.get("/", function(req, res) {
-    db.games.findAll({}).then(function(dbgames) {
-      res.render("index", {
-        msg: "Welcome!",
-        games: dbgamess
-      });
-    });
+    res.sendFile(path.join(__dirname, "../public/index.html"))
   });
 
   // Load games page and pass in an games by id
@@ -33,7 +14,6 @@ module.exports = function(app) {
         games: dbgames
       });
     });
->>>>>>> d87926ce77a42f56947fcbffb9f8811355e233cc
   });
 
   // Render 404 page for any unmatched routes
