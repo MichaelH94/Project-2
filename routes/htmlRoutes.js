@@ -1,19 +1,23 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index Page
-  app.get('/', (req, res) => {
-    res.render('index');
+  // Load index page
+  app.get("/", function(req, res) {
+    db.games.findAll({}).then(function(dbgames) {
+      res.render("index", {
+        msg: "Welcome!",
+        games: dbgamess
+      });
+    });
   });
 
-  //Render login page
-  app.get('/login', (req, res) => {
-    res.render('login');
-  });
-
-  //render create account
-  app.get('/creatAccount', (req, res) => {
-    res.render('createAccount');
+  // Load games page and pass in an games by id
+  app.get("/games/:id", function(req, res) {
+    db.games.findOne({ where: { id: req.params.id } }).then(function(dbgames) {
+      res.render("games", {
+        games: dbgames
+      });
+    });
   });
 
   // Render 404 page for any unmatched routes
