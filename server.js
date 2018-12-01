@@ -13,7 +13,7 @@ const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes")
 
 app.use('/', htmlRoutes)
-//app.use('/api', apiRoutes)
+app.use('/api', apiRoutes)
 
 // Starting the server, syncing our models ------------------------------------/
   app.listen(PORT, () => {
