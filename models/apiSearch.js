@@ -8,7 +8,6 @@ const hltb = require('howlongtobeat');
 const hltbService = new hltb.HowLongToBeatService();
 const app = require('./app')
 
-console.log(key.igdbConfig.key)
 
 let gameData = [];
 let hypes = "";

@@ -1,5 +1,5 @@
 const path = require('path');
-require('dotenv')
+require('dotenv').config()
 
 exports.dbConfig = {
     user: process.env.DATABASE_USER,
