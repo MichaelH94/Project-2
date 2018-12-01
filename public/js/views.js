@@ -1,5 +1,4 @@
 
-$(document)
 $(document).on('click', '#createAccount', handleCreateAccount);
 
 let handleCreateAccount = () => {
