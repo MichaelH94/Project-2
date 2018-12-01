@@ -1,5 +1,5 @@
 const igdb = require('igdb-api-node').default;
-const key = require('../config/keys.js')
+const key = require('../config/keys')
 const client = igdb(key.igdbConfig.key);
 const log = response => {
     console.log(response.url, JSON.stringify(response.body));
@@ -7,6 +7,8 @@ const log = response => {
 const hltb = require('howlongtobeat');
 const hltbService = new hltb.HowLongToBeatService();
 const app = require('./app')
+
+console.log(key.igdbConfig.key)
 
 let gameData = [];
 let hypes = "";
@@ -29,7 +31,6 @@ function igdbSearch(game) {
         'summary',
         'esrb'
     ]).then(response => {
-
         gameData.push(JSON.stringify(response.body));
         gameData = JSON.parse(gameData)
         gameData = gameData[0];
@@ -50,6 +51,8 @@ function igdbSearch(game) {
         }
         rating = gameData.rating;
         hltbSearch(game);
+        console.log(game)
+        console.log(gameData)
     });
  };
 
@@ -58,10 +61,11 @@ function hltbSearch(game) {
     hltbService.search(game).then(result => {
         timetobeat = result[0].gameplayMain;
         imageUrl = result[0].imageUrl;
-        app.createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb)
+        console.log(result)
+        // app.createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb)
     });
 };
 
 
 
-igdbSearch("Darkest Dungeon");
+igdbSearch("Rimworld");
