@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="profile-info col-sm-3">
+    <div class="info-card" style="max-width: 18rem;">
+      <img class="card-img-top rounded-circle" src="../../assets/images/Profile Pic.jpg" style="height: 160px; width: 160px"
+        alt="Profile Photo">
+      <div class="card-body">
+        <h5 class="card-title">{{{ user }}}</h5>
+        <h6 class="gamer-style">{{{ gamestyle }}}</h6>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Age: {{{ age }}}</li>
+        <li class="list-group-item">Location: {{{ location }}}</li>
+        <li class="list-group-item">Game Platform: {{{ platform }}}</li>
+      </ul>
+      <div class="card-footer">
+        <div class="profile-change">
+          <div class=icon-left>
+            <span class="fas fa-edit" data-toggle="tool-tip" data-placement="bottom" title="Edit Profile" style="float: left"></span>
+          </div>
+          <div class="icon-right">
+            <span class="fas fa-gamepad" data-toggle="tool-tip" data-placement="bottom" title="Add New Game" style="float: right"></span>
+          </div>
+          <div class="empty" style="clear: both"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
