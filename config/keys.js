@@ -1,5 +1,5 @@
 const path = require('path');
-require('dotenv').config({ path: path.resolve('../' , '.env') })
+require('dotenv')
 
 exports.dbConfig = {
     user: process.env.DATABASE_USER,

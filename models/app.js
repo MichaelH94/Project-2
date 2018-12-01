@@ -61,6 +61,8 @@ function createUser(username, password, name, age, location, style, genre, platf
             genre: genre,
             platform: platform
         });
+
+        return;
     });
 };
 
@@ -78,22 +80,23 @@ function createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb) {
     });
 };
 
-function deleteUser() {
-    connection.sync().then(() => {
-        User.destroy({
-            where: {
-                id: 1
-            }
-        })
-    })
-}
+// function deleteUser() {
+//     connection.sync().then(() => {
+//         User.destroy({
+//             where: {
+//                 id: 1
+//             }
+//         })
+//     })
+// }
 
-function deleteGame() {
-    connection.sync().then(() => {
-        Games.destroy({
-            where: {
-                id: 1
-            }
-        });
-    });
-}
+// function deleteGame() {
+//     connection.sync().then(() => {
+//         Games.destroy({
+//             where: {
+//                 id: 1
+//             }
+//         });
+//     });
+// }
+
