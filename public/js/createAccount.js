@@ -19,5 +19,5 @@ let handleCreateAccount = () => {
 
 //post function using sequalize
 let addUser = (userData) => {
-  $.post('/createAccount.html', userData);
+  $.post('/Users', userData);
 }

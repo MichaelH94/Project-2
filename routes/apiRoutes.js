@@ -9,24 +9,15 @@ const bodyparser = require('body-parser');
 //router.get("/game", (req, res) =>{});
 
 //get one user
-//router.get('api/Users/:id', (req, res) => {});
+router.get('/login', (req, res) => {
+  console.log();
+});
 
 // Create user
-router.post('api/Users', (req, res)=>{
+router.post('/create-account', (req, res)=>{
   console.log(req.body);
-  res.json({
-    type: 'POST'
-    /*
-    username: req.body.username,
-    password: req.body.password,
-    name: req.body.name,
-    age: req.body.age,
-    location: req.body.location,
-    style: req.body.style,
-    genre: req.body.genre,
-    platform: req.body.platform
-    */
-  });
+  console.log("create account");
+  res.json(req.body);
 });
 
 module.exports = router;
