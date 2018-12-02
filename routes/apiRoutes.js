@@ -17,15 +17,9 @@ router.get('/login', (req, res) => {
 router.post('/create-account', (req, res)=>{
   console.log(req.body);
   res.json(req.body);
-  app.createUser(
-    req.body.username,
-    req.body.password,
-    req.body.name,
-    req.body.age,
-    req.body.location,
-    req.body.style,
-    req.body.platform
-    );
+
+  // Function from app.js
+  app.createUser(req.body.username, req.body.password, req.body.name, req.body.age, req.body.location, req.body.style, req.body.platform);
 });
 
 router.post('/homepage', (req, res) => {
