@@ -2,22 +2,30 @@
 let handleCreateAccount = () => {
   event.preventDefault();
 
-  $('body').html("DONE");
+  let username = $('#createUsername').val().trim();
+  let name = $('#name').val().trim();
+  let password = $('#creatPassword').val();
+  let age = $('#age').val().trim();
+  let location = $('#location').val().trim();
+  let style = $('#playStyle').val();
+  let platform = $('#platform').val();
 
   //json object
-  addUser ({
-    username: createUsername,
+  addUser({
+    username: username,
     name: name,
-    password: createPassword,
+    password: password,
     age: age,
     location: location,
-    style: playStyle,
+    style: style,
     platform: platform
   });
+  window.location.href = "http://localhost:3000/login";
 }
 
 let addUser = (userData) => {
   $.post('/create-account', userData);
+  console.log('made it to the add user function');
 }
 
 $('#createAccount').on('click', handleCreateAccount);
