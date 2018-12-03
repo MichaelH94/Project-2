@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="../assets/layout.css" type="text/css">
 
-	<title>PROJECT #2</title>
+	<title>wiredIN</title>
 
 </head>
 
@@ -51,7 +51,7 @@
 					 data-toggle="tooltip" data-placement-"bottom" title="Profile Settings">
 				</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Do Something</a>
+					<a class="dropdown-item" href="#">Settings & Privacy</a>
 					<a class="dropdown-item" href="#">Do Something Else</a>
 					<a class="dropdown-item" href="#">And Yet Another Thing</a>
 					<a class="dropdown-item" href="#">Then One Last Action</a>
@@ -72,14 +72,15 @@
 					<img class="card-img-top rounded-circle" src="../assets/images/Profile Pic.jpg" style="height: 160px; width: 160px"
 					 alt="Profile Photo">
 					<div class="card-body">
-						<h5 class="card-title">Paul Marinsky</h5>
-						<h6 class="game-style">Advanced</h6>
+						<h5 class="card-title">Paul Marinsky <!-- User Name --></h5>
+						<h6 class="game-style">Advanced <!-- Gamer Style --></h6>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item" id="itemAge">Age: <!-- {{{ age }}} --> </li>
-						<li class="list-group-item" id="itemLocation">Location: <!-- {{{ location }}}--> </li>
-						<li class="list-group-item" id="itemPlatform">Game Platform: <!-- platform --> </li>
-					</ul>
+					<div class="col-sm-3">
+					  <ul class="list-group list-group-flush">
+						<li class="list-group-item" id="itemAge">Age: <!-- Age --> </li>
+						<li class="list-group-item" id="itemLocation">Location: <div id="location"></div><!-- Location --> </li>
+						<li class="list-group-item" id="itemPlatform">Game Platform: <!-- Platform --> </li>
+					  </ul>
 					<div class="card-footer">
 						<div class="profile-change">
 							<div class=icon-left>
@@ -98,7 +99,7 @@
 
 					<div class="game-list">
 						<ul class="game-list-items" style="text-align: left">
-							<li class="game-group-item">Red Dead Redemption</li>
+							<li class="game-group-item">Red Dead Redemption <!-- GAME --></li>
 							<li class="game-group-item">Call of Duty: Modern Warfare</li>
 						</ul>
 					</div>
@@ -109,7 +110,7 @@
 
 			<!--NEWS FEED SECTION -->
 			<div class="col-sm-6">
-				<div class="form-group">
+				<div contenteditable="true">
 					<textarea class="form-control" id="wallPost" rows="2" placeholder="Post to your game board..."></textarea>
 				</div>
 				<div id="contentPosted" class="newsFeed">
