@@ -48,7 +48,7 @@ var User = connection.define("User", {
     };
 
     User.associate = () => {
-        User.hasMany(Posts, { 
+        User.hasMany(Posts, {
             onDelete: "cascade"
         })
     };
@@ -62,9 +62,9 @@ var User = connection.define("User", {
         }
       });
     };
-    
+
     Posts.associate = () => {
-        Posts.belongsTo(User, { 
+        Posts.belongsTo(User, {
             foreignKey: {
                 allowNull: false
             }
@@ -73,12 +73,13 @@ var User = connection.define("User", {
 
 let app = {
 createUser: (username, password, name, age, location, style, genre, platform) => {
+  console.log("Made it in here");
     connection.sync().then(() => {
         User.create({
             username: username,
             password: password,
             name: name,
-            age: age, 
+            age: age,
             location: location,
             style: style,
             genre: genre,
