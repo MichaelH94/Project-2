@@ -14,7 +14,7 @@ router.get('/login', (req, res) => {
 });
 
 // Create user
-router.post('/create-account', (req, res)=>{
+router.post('/create-account', (req, res) => {
   console.log(req.body);
   res.json(req.body);
 

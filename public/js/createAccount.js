@@ -1,4 +1,5 @@
 
+
 let handleCreateAccount = () => {
   event.preventDefault();
 
@@ -10,7 +11,6 @@ let handleCreateAccount = () => {
   let style = $('#playStyle').val();
   let platform = $('#platform').val();
 
-  //json object
   addUser({
     username: username,
     name: name,
@@ -20,12 +20,11 @@ let handleCreateAccount = () => {
     style: style,
     platform: platform
   });
-  window.location.href = "http://localhost:3000/login";
+
 }
 
 let addUser = (userData) => {
-  $.post('/create-account', userData);
-  console.log('made it to the add user function');
+  $.post('/api/create-account', userData);
 }
 
 $('#createAccount').on('click', handleCreateAccount);
