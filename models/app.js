@@ -13,8 +13,7 @@ var User = connection.define("User", {
       },
       location: sequelize.STRING,
       style: sequelize.INTEGER,
-      genre: sequelize.STRING,
-      platform: sequelize.INTEGER
+      platform: sequelize.STRING
   });
 
     var Games = connection.define("Games", {
@@ -72,7 +71,7 @@ var User = connection.define("User", {
     };
 
 let app = {
-createUser: (username, password, name, age, location, style, genre, platform) => {
+createUser: (username, password, name, age, location, style, platform) => {
   console.log("Made it in here");
     connection.sync().then(() => {
         User.create({
@@ -82,7 +81,6 @@ createUser: (username, password, name, age, location, style, genre, platform) =>
             age: age,
             location: location,
             style: style,
-            genre: genre,
             platform: platform
         });
 

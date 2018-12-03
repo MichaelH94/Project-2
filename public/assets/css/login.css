@@ -1,4 +1,4 @@
-.section {
+body {  
   display: flex;
   height: 100vh;
   background-color: #737373;
@@ -9,19 +9,10 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-.centerText {
-  text-align: center;
-}
 
-label {
-  color: white;
-  font-size: 20px;
-  margin-top: 20px;
-}
 
 .button {
   line-height: 47px;
-  background: #46007D;
   color: white;
   border-radius: 50px;
   height: 50px;
@@ -36,19 +27,27 @@ input {
   border-radius: 50px;
   width: 292px;
   height: 50px;
-  display: block
+  align-content: center;
 }
 
-#signIn {
-  width: 140px;
-  margin-top: 20px;
-}
-
-#createAnAccount {
+.customBtn, .txtBox {
   width: 292px;
+  border-radius: 20px;
+  margin: 20px auto;
+}
+
+.customBtn {
+  background: #46007D;
+}
+
+
+
+.modal-content {
+  background-color: rgba(97, 15, 160, 0.9);
+  opacity: 75%;
+  text-shadow: 2px 1px black;
 }
 
 p {
-  font-size: 18px;
-  color: white;
+  padding: 0;
 }
