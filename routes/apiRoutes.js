@@ -9,8 +9,11 @@ const bodyparser = require('body-parser');
 //router.get("/game", (req, res) =>{});
 
 //get one user
-router.get('/login', (req, res) => {
-  console.log();
+router.get('/login/:username', (req, res) => {
+  console.log(req.params.username);
+  console.log(app.getUser(req.params.username) + '\n\n\n!!!!!!!!IM HEERREEEEEEEEEEE \n\n\n');
+  console.log(res.json(app.getUser(req.params.username)));
+
 });
 
 // Create user
