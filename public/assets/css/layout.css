@@ -13,8 +13,17 @@ body {
 .navbar-dark {
     background-image: linear-gradient(to right, rgb(149, 17, 189), rgb(42,3,65));
 }
-.fas {
+.fas, .far {
     color: rgb(178, 121, 235);
+}
+
+.post-instructions {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(42, 3, 65);
+}
+.fa-pencil-alt, .fa-image, .fa-video {
+    padding-left: 20px;
 }
 
 .logo {
@@ -65,15 +74,11 @@ body {
     color: rgb(178, 121, 235);
 }
 
-#itemAge, #itemPlatform {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .game-list-wrapper {
     padding-top: 25px;
 }
-.game-titles {
+.my-games-header {
+    margin-bottom: 0;
     padding-top:10px;
     padding-bottom: 10px;
     background-color: white;
@@ -81,4 +86,16 @@ body {
 }
 .game-list {
     border: solid 1px rgb(149, 17, 189);
+}
+
+.dropdown-menu {
+    border: solid 1px rgb(240, 199, 232);
+    box-shadow: 2px 2px 3px rgb(42, 3, 65);
+}
+
+#gameCard {
+    background-image: linear-gradient(to right, rgb(240, 199, 232), rgb(255, 255, 255));
+    border: solid 1px rgb(178, 121, 235);
+    box-shadow: 1px 1px 1px rgb(149, 17, 189);
+    padding-bottom: 20px;
 }
