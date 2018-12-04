@@ -33,6 +33,7 @@
 					<span class="input-group-text" id="inputGroup-sizing-sm"><a class="fas fa-search"></a></span>
 				</div>
 			</div>
+
 			<!--NAVIGATION ICONS-->
 			<ul class="nav justify-content-end">
 				<li class="nav-item">
@@ -47,7 +48,7 @@
 				<li id="miniPic" class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
 					 aria-expanded="false">
-						<img src="../public/assets/images/Profile Pic.jpg" alt="Profile Settings" class="rounded-circle" style="height: 25px; width: 25px"
+						<img src="../public/assets/images/deadpool.jpg" alt="Profile Settings" class="rounded-circle" style="height: 25px; width: 25px"
 						 data-toggle="tooltip" data-placement-"bottom" title="Profile Settings">
 					</a>
 					<div class="dropdown-menu">
@@ -66,23 +67,23 @@
 			<!--USER PROFILE INFORMATION-->
 			<div class="profile-info col-sm-3">
 				<div class="info-card" style="max-width: 18rem;">
-					<img class="card-img-top rounded-circle" src="../public/assets/images/Profile Pic.jpg" style="height: 160px; width: 160px"
+					<img class="card-img-top rounded-circle" src="../public/assets/images/deadpool.jpg" style="height: 160px; width: 160px"
 					 alt="Profile Photo">
 					<div class="card-body">
 						<div id="userName">
 							<h5 class="user" style="font-weight: bold">
-								<!-- NAME HERE -->Paul Marinsky
+								<!-- NAME HERE -->Mr. Pool
 							</h5>
 						</div>
 						<div id="playerStyle">
 							<h6 class="player-level" style="font-style: italic; color: rgb(149, 17, 189)">
-								<!-- PLAYER STYLE/LEVEL HERE --> Advanced
+								<!-- PLAYER STYLE/LEVEL HERE --> Completionist
 							</h6>
 						</div>
 					</div>
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item" id="itemAge">Age: 39</li>
-						<li class="list-group-item" id="itemLocation">Location: Leawood, KS</li>
+						<li class="list-group-item" id="itemAge">Age: 30</li>
+						<li class="list-group-item" id="itemLocation">Location: Your Living Room, USA</li>
 						<li class="list-group-item" id="itemPlatform">Game Platform: XBox</li>
 					</ul>
 					<div class="card-footer">
@@ -98,6 +99,7 @@
 					</div>
 				</div>
 
+				<!-- Game List | My Games -->
 				<div class="game-list-wrapper" style="max-width: 18rem; max-height: 100%; text-align: center">
 					<h6 class="my-games-header" style="color: rgb(149, 17, 189)">My Games</h6>
 					<div class="separate-fun-arrows">
@@ -119,7 +121,6 @@
 						</div>
 					</div>
 
-
 					<div class="card-body" id="gameCard">
 						<div id="gameTitle" style="font-size: 10px; color: rgb(178, 121, 235)">
 							<h5 class="game-title" style="font-size: 14px"> Batman: Arkham Asylum </h5>
@@ -138,35 +139,42 @@
 			</div>
 
 			<!--NEWS FEED SECTION -->
+
 			<div class="col-sm-6">
 				<div class="form-group">
-					<textarea class="form-control" id="wallPost" rows="2" placeholder="Post to your game board..."></textarea>
+					<textarea class="form-control" id="wallPost" rows="2" placeholder="Write a post..."></textarea>
 					<div class="post-instructions">
-						<span class="fas fa-pencil-alt fa-1x" style="display: inline"></span>
-						<span class="far fa-image fa-1x" style="display: inline"></span>
-						<span class="fas fa-video fa-1x" style="display: inline"></span>
+						<span class="fas fa-pencil-alt fa-1x" style="display: inline" href="#" data-toggle="tool-tip" data-placement="bottom"
+						 title="Post"></span>
+						<span class="far fa-image fa-1x" style="display: inline" href="#" data-toggle="tool-tip" data-placement="bottom"
+						 title="Post an image"></span>
+						<span class="fas fa-video fa-1x" style="display: inline" href="#" data-toggle="tool-tip" data-placement="bottom"
+						 title="Post a video"></span>
 					</div>
 				</div>
 				<div id="contentPosted" class="newsFeed">
-					You  have not made any posts yet. To start posting click <i class="fas fa-pencil-alt" style="padding-left: 5px"></i>
+					You have not made any posts yet. Write a post and click <i class="fas fa-pencil-alt" style="padding-left: 5px"></i>
 				</div>
 			</div>
 
-			<!--GAME TRACKING-->
-			<div class="games-wrapper col-sm-3">
+			<!--Trending Content-->
+
+			<div class="trend-wrapper col-sm-3">
 				<div class="card border-dark" style="max-width: 18rem;">
-					<div class="card-header">TRENDING</div>
+					<div class="card-header">
+						<h6 class="sponsored-header" style="color: rgb(149, 17, 189); font-style: italic">Sponsored</h6>
+					</div>
 					<div class="card-body">
-						<h5 class="card-title">Community</h5>
-						<p class="card-text">Text Text Text
-							content.</p>
+						<div class="new-sponsor">
+							<img class="sponsor-random" src="https://cdn.images.dailystar.co.uk/dynamic/184/photos/236000/620x/Nintendo-Switch-Games-News-Massive-boost-for-Nintendo-games-ahead-of-Christmas-745333.jpg?r=5c0349f073453">
+							<p class="ad-sponsor-desc">Happy Holidays from Nintendo!</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
-	</div>
+	
 
 
 
