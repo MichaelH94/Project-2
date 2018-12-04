@@ -18,7 +18,8 @@ let summary = "";
 let timetobeat = 1;
 let imageUrl = "";
 
-function igdbSearch(game) {
+let apiSearches = {
+igdbSearch: (game) => {
     client.games({
         limit: 5,
         offset: 0,
@@ -53,17 +54,19 @@ function igdbSearch(game) {
         console.log(game)
         console.log(gameData)
     });
- };
+ },
 
 
-function hltbSearch(game) {
+hltbSearch: (game) => {
     hltbService.search(game).then(result => {
         timetobeat = result[0].gameplayMain;
         imageUrl = result[0].imageUrl;
         console.log(result)
         app.createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb)
     });
-};
+}
+
+}
 
 
-
+module.exports = apiSearches
