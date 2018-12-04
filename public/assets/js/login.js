@@ -7,7 +7,7 @@ let handleCreateAccount = () => {
   let age = $('#age').val().trim();
   let location = $('#location').val().trim();
   let style = $('#playStyle').val();
-  let platform = $('#platform').text().trim();
+  let platform = $('#platform').val();
 
   addUser({
     username: username,

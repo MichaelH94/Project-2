@@ -50,7 +50,7 @@ igdbSearch: (game) => {
             rating = 0;
         }
         rating = gameData.rating;
-        hltbSearch(game);
+        apiSearches.hltbSearch(game);
         console.log(game)
         console.log(gameData)
     });
