@@ -19,9 +19,9 @@
           <input type="text" class="form-control txtBox" id="usernameForm" placeholder="Username">
 
           <input type="password" class="form-control txtBox" id="passForm" placeholder="Password">
-
-        <button type="submit" class="btn btn-secondary mb-2 customBtn" id="loginBtn">Log In</button>
-        <br>
+        <form action ="/homepage", method="GET">
+        <button type="submit" class="btn btn-secondary mb-2 customBtn" id="loginBtn" action="/homepage", method="GET">Log In</button>
+          </form>
         <button type="submit" class="btn btn-secondary mb-2 customBtn" id="createAccBtn" data-toggle="modal" data-target="#accModal">Create Account</button>
 
   </div>
@@ -61,7 +61,7 @@
                     </div>
                   </form>
               
-                  <p class="text-center">How do you normally complete games?:</p>
+                  <p class="text-center">How do you normally complete games?</p>
                   <form action="/action_page.php">
                     <select id="playStyle" class="form-control txtBox" size="1">
                       <option value="1">Just the Story</option>
