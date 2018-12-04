@@ -29,7 +29,6 @@ connection.sync().then(() => {
         platform: user.platform
       }
       console.log(data);
-
       res.render('index', data)
       })
     });
@@ -52,5 +51,23 @@ router.post('/add-game', (req, res) => {
   console.log(req.body)
   apiSearch.igdbSearch(req.body.game)
 });
+
+router.post('/games', (req, res) => {
+  let games;
+  connection.sync().then(() => {
+    Games.findAll({
+      attributes: ['name', 'imageUrl', 'timetobeat', 'summary', 'rating']
+    }).then(info => {
+      let games = {
+        name: info.name,
+        imageUrl: info.imageUrl,
+        ttb: info.timetobeat,
+        summary: info.summary,
+        rating: info.rating
+      }
+      res.render('games', games)
+    })
+  })
+})
 
 module.exports = router;

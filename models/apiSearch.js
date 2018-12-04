@@ -20,6 +20,7 @@ let imageUrl = "";
 
 let apiSearches = {
 igdbSearch: (game) => {
+    gameData = [];
     client.games({
         limit: 5,
         offset: 0,

@@ -112,4 +112,18 @@ body {
     border: solid 1px rgb(178, 121, 235);
     box-shadow: 1px 1px 1px rgb(149, 17, 189);
     padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.newGameCard {
+    background-image: linear-gradient(to right, rgb(240, 199, 232), rgb(255, 255, 255));
+    border: solid 1px rgb(178, 121, 235);
+    box-shadow: 1px 1px 1px rgb(149, 17, 189);
+    margin: 10px auto 10px;
+    word-wrap: normal, break-word, initial inherit;
+    height: 500px;
+    width: 400px;
+}
+.card-img-top {
+    height: 70%;
 }

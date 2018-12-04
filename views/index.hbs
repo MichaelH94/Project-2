@@ -1,3 +1,4 @@
+
 <!-- NAVIGATION BAR -->
   <div class="nav-wrapper">
     <nav class="navbar navbar-dark bg-dark">
@@ -17,7 +18,7 @@
           <a class="nav-link fas fa-home" href="#" data-toggle="tooltip" data-placement="bottom" title="Home"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fas fa-gamepad" href="#" data-toggle="tooltip" data-placement="bottom" title="My Games"></a>
+          <a class="nav-link fas fa-gamepad" href="/games" data-placement="bottom" action="/games", method="POST"  title="My Games"></a>
         </li>
         <li class="nav-item">
           <a class="nav-link fas fa-bell" href="#" data-toggle="tooltip" data-placement="bottom" title="Notifications"></a>
@@ -25,15 +26,12 @@
         <li id="miniPic" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">
-            <img src="/assets/images/Profile Pic.jpg" alt="Profile Settings" class="rounded-circle" style="height: 25px; width: 25px"
+            <img src="/assets/images/deadpool.jpg" alt="Profile Settings" class="rounded-circle" style="height: 25px; width: 25px"
               data-toggle="tooltip" data-placement-"bottom" title="Profile Settings">
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Profile/a>
-            <a class="dropdown-item" href="#">Edit Profile</a>
-            <a class="dropdown-item" href="#">Explore</a>
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="#">Settings & Privacy</a>
+						<a class="dropdown-item" href="" action="/", method="POST">Logout</a>
           </div>
         </li>
       </ul>
@@ -45,7 +43,7 @@
       <!--USER PROFILE INFORMATION-->
       <div class="profile-info col-sm-3">
         <div class="info-card" style="max-width: 18rem;">
-          <img class="card-img-top rounded-circle" src="/assets/images/Profile Pic.jpg" style="height: 160px; width: 160px"
+          <img class="card-img-top rounded-circle" src="/assets/images/deadpool.jpg" style="height: 160px; width: 160px"
             alt="Profile Photo">
           <div class="card-body">
             <div id="userName">
@@ -72,12 +70,56 @@
         </div>
 
         <div class="game-list-wrapper" style="max-width: 18rem; max-height: 100%; text-align: center">
-          <h6 class="game-titles" style="color: rgb(149, 17, 189)">My Games {{games}}</h6>
+          <h6 class="my-games-header" style="color: rgb(149, 17, 189)">My Games</h6>
+          <br>
+          <div class="card-body" id="gameCard">
+						<div id="gameTitle" style="font-size: 10px; color: rgb(178, 121, 235)">
+							<h5 class="game-title" style="font-size: 14px"> Red Dead Redemption 2<br>
+              Time To Beat: 142 hrs</h5>
+						</div>
 
-          <div class="game-list">
-            <ul class="game-list-items" style="text-align: left">
-            </ul>
-          </div>
+						<div class="icon-left">
+							<a class="fas fa-info-circle" href="#" data-toggle="tool-tip" data-placement="bottom" title="View Game Info"
+							 style="float: left"></a>
+						</div>
+						<div class="icon-right">
+							<a class="far fa-share-square" href="#" data-toggle="tool-tip" data-placement="bottom" title="Share this game"
+							 style="float: right"></a>
+						</div>
+					</div>
+
+					<div class="card-body" id="gameCard">
+						<div id="gameTitle" style="font-size: 10px; color: rgb(178, 121, 235)">
+							<h5 class="game-title" style="font-size: 14px"> Batman: Arkham Asylum<br>
+              Time To Beat: 25 hrs</h5>
+						</div>
+
+						<div class="icon-left">
+							<a class="fas fa-info-circle" href="#" data-toggle="tool-tip" data-placement="bottom" title="View Game Info"
+							 style="float: left"></a>
+						</div>
+						<div class="icon-right">
+							<a class="far fa-share-square" href="#" data-toggle="tool-tip" data-placement="bottom" title="Share this game"
+							 style="float: right"></a>
+						</div>
+					</div> 
+
+          <div class="card-body" id="gameCard">
+						<div id="gameTitle" style="font-size: 10px; color: rgb(178, 121, 235)">
+							<h5 class="game-title" style="font-size: 14px"> DOOM<br>
+              Time To Beat: 24 hrs</h5>
+						</div>
+
+						<div class="icon-left">
+							<a class="fas fa-info-circle" href="#" data-toggle="tool-tip" data-placement="bottom" title="View Game Info"
+							 style="float: left"></a>
+						</div>
+						<div class="icon-right">
+							<a class="far fa-share-square" href="#" data-toggle="tool-tip" data-placement="bottom" title="Share this game"
+							 style="float: right"></a>
+						</div>
+					</div> 
+      
         </div>
 
 
@@ -85,26 +127,56 @@
 
       <!--NEWS FEED SECTION -->
       <div class="col-sm-6">
-        <div class="form-group">
-          <textarea class="form-control" id="wallPost" rows="2" placeholder="Post to your game board..."></textarea>
-        </div>
-        <div id="contentPosted" class="newsFeed">
-          News Feed content will appear here
-        </div>
-      </div>
+				<div class="form-group">
+					<textarea class="form-control" id="wallPost" rows="2" placeholder="Write a post..."></textarea>
+					<div class="post-instructions">
+						<span class="fas fa-pencil-alt fa-1x" style="display: inline" href="#" data-toggle="tool-tip" data-placement="bottom"
+						 title="Post"></span>
+						<span class="far fa-image fa-1x" style="display: inline" href="#" data-toggle="tool-tip" data-placement="bottom"
+						 title="Post an image"></span>
+						<span class="fas fa-video fa-1x" style="display: inline" href="#" data-toggle="tool-tip" data-placement="bottom"
+						 title="Post a video"></span>
+					</div>
+				</div>
+				<div id="contentPosted" id="wallPost">
+					You have not made any posts yet. Write a post and click <i class="fas fa-pencil-alt" style="padding-left: 5px"></i>
+				</div>
+			</div>
 
       <!--GAME TRACKING-->
-      <div class="games-wrapper col-sm-3">
-        <div class="card border-dark" style="max-width: 18rem;">
-          <div class="card-header">TRENDING</div>
-          <div class="card-body">
-            <h5 class="card-title">Community</h5>
-            <p class="card-text">Text Text Text
-              content.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="trend-wrapper col-sm-3">
+				<div class="card border-dark" style="max-width: 18rem;">
+					<div class="card-header text-center" id="sponsored-header" style="color: rgb(149, 17, 189); font-style: italic">
+						<h5>Sponsored</h5>
+					</div>
+					<div class="card-body">
+						<div class="new-sponsor">
+							<img class="sponsor-random" src="https://cdn.images.dailystar.co.uk/dynamic/184/photos/236000/620x/Nintendo-Switch-Games-News-Massive-boost-for-Nintendo-games-ahead-of-Christmas-745333.jpg?r=5c0349f073453">
+							<p class="ad-sponsor-desc">Happy Holidays from Nintendo!</p>
+						</div>
+            <br>
+            <div class="new-sponsor">
+							<img class="sponsor-random" src="https://oyster.ignimgs.com/wordpress/stg.ign.com/2018/12/Out-This-WeekSMASH.png">
+							<p class="ad-sponsor-desc">Smash Ultimate: Dec 7, 2018</p>
+						</div>
+            <br>
+            <div class="new-sponsor">
+							<img class="sponsor-random" src="https://upload.wikimedia.org/wikipedia/en/0/06/Fallout_76_cover.jpg">
+							<p class="ad-sponsor-desc">Fallout 76 Controversy Continues</p>
+						</div>
+            <br>
+            <div class="new-sponsor">
+							<img class="sponsor-random" src="https://upload.wikimedia.org/wikipedia/en/0/0f/Just_Cause_4_cover.jpg">
+							<p class="ad-sponsor-desc">Just Cause 4 Releases</p>
+						</div>
+            <br>
+            <div class="new-sponsor">
+							<img class="sponsor-random" src="https://cdn.vox-cdn.com/thumbor/6BdAPsDUOmvQ2ynYTWhm4AtmMvE=/0x0:1100x619/1200x800/filters:focal(462x222:638x398)/cdn.vox-cdn.com/uploads/chorus_image/image/52055017/the_game_awards.0.0.jpeg">
+							<p class="ad-sponsor-desc">VGAs: Dec 6th, 2018</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
   </div>
   </div>

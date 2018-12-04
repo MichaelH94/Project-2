@@ -1,0 +1,59 @@
+<div class="nav-wrapper">
+    <nav class="navbar navbar-dark bg-dark">
+      <!--Search Bar -->
+      <div class="input-group input-group-sm justify-content-start">
+        <div class="logo">
+          <img src="/assets/images/logo.png" style="height: 34px; width: 34px" href="#" alt="home">
+        </div>
+        <input type="text" class="form-control" aria-label="Search" aria-describedby="inputGroup-sizing-sm" placeholder="Search">
+        <div class="input-group-append">
+          <span class="input-group-text" id="inputGroup-sizing-sm"><a class="fas fa-search"></a></span>
+        </div>
+      </div>
+      <!--NAVIGATION ICONS-->
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link fas fa-home" href="#" data-toggle="tooltip" data-placement="bottom" title="Home"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fas fa-gamepad" href="/games" data-placement="bottom" action="/games", method="POST"  title="My Games"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fas fa-bell" href="#" data-toggle="tooltip" data-placement="bottom" title="Notifications"></a>
+        </li>
+        <li id="miniPic" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">
+            <img src="/assets/images/deadpool.jpg" alt="Profile Settings" class="rounded-circle" style="height: 25px; width: 25px"
+              data-toggle="tooltip" data-placement-"bottom" title="Profile Settings">
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Settings & Privacy</a>
+						<a class="dropdown-item" href="" action="/", method="POST">Logout</a>
+          </div>
+        </li>
+      </ul>
+       </div>
+    </nav>
+    <br>
+
+ <div class="container-fluid">
+<div class="row">
+{{#each games}}
+<div class="card newGameCard">
+  <img class="card-img-top" height="25%" src={{this.imageUrl}}>
+  <div class="card-body text-center">
+    <h5 class="card-title">{{this.name}}</h5>
+    <h5>Rating: {{this.rating}}<br>
+    Time To Beat: {{this.timetobeat}}</h5>
+   </div>
+    </div>
+ {{/each}}
+</div>
+   
+ 
+  
+ </div>
+
+
+ 
