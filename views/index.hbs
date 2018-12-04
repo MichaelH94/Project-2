@@ -49,29 +49,30 @@
             alt="Profile Photo">
           <div class="card-body">
             <div id="userName">
-				<h5 class="user" style="font-weight: bold"> <!-- NAME HERE --> </h5>
+				<h5 class="user" style="font-weight: bold"> {{name}} </h5>
 			</div>
 			<div id="playerStyle">
 				<h6 class="player-level" style="font-style: italic; color: rgb(149, 17, 189)"> <!-- PLAYER STYLE/LEVEL HERE --> </h6>
 			</div>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" id="itemAge">{{age}}</li>
-            <li class="list-group-item" id="itemLocation">{{location}}</li>
-            <li class="list-group-item" id="itemPlatform">{{console}}</li>
+            <li class="list-group-item" id="itemAge">Age: {{age}}</li>
+            <li class="list-group-item" id="itemLocation">Location: {{location}}</li>
+            <li class="list-group-item" id="itemPlatform">Style: {{style}}</li>
           </ul>
           <div class="card-footer">
             <div class="profile-change">
               <form action="/add-game", method="POST">
-              <input type="text" class="form-control txtBox" placeholder="New Game" id="newGame" required>
-              </form>
+              <input type="text" class="form-control txtBox" placeholder="New Game" name="game">
+              
             </div>
           </div>
           <button class="btn btn-block" id="addNewGame">Add New</button>
+          </form>
         </div>
 
         <div class="game-list-wrapper" style="max-width: 18rem; max-height: 100%; text-align: center">
-          <h6 class="game-titles" style="color: rgb(149, 17, 189)">My Games</h6>
+          <h6 class="game-titles" style="color: rgb(149, 17, 189)">My Games {{games}}</h6>
 
           <div class="game-list">
             <ul class="game-list-items" style="text-align: left">
