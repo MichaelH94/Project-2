@@ -33,10 +33,24 @@ var User = connection.define("User", {
       rating: sequelize.INTEGER,
       esrb: sequelize.STRING
     });
+
+    var Posts = connection.define("Posts", {
+        body: {
+            type: sequelize.TEXT,
+            allowNull: false
+        }
+    });
+
     User.associate = () => {
         User.hasMany(Games, {
             onDelete: "cascade"
         });
+    };
+
+    User.associate = () => {
+        User.hasMany(Posts, {
+            onDelete: "cascade"
+        })
     };
 
     Games.associate = () => {
@@ -47,15 +61,25 @@ var User = connection.define("User", {
           allowNull: false
         }
       });
-    }
+    };
 
-function createUser(username, password, name, age, location, style, genre, platform) {
+    Posts.associate = () => {
+        Posts.belongsTo(User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
+let app = {
+createUser: (username, password, name, age, location, style, genre, platform) => {
+  console.log("Made it in here");
     connection.sync().then(() => {
         User.create({
             username: username,
             password: password,
             name: name,
-            age: age, 
+            age: age,
             location: location,
             style: style,
             genre: genre,
@@ -64,9 +88,9 @@ function createUser(username, password, name, age, location, style, genre, platf
 
         return;
     });
-};
+},
 
-function createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb) {
+createGame: (name, imageUrl, timetobeat, summary, hypes, rating, esrb) => {
     connection.sync().then(() => {
         Games.create({
             name: name,
@@ -78,25 +102,25 @@ function createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb) {
             esrb: esrb,
         });
     });
-};
+},
 
-// function deleteUser() {
-//     connection.sync().then(() => {
-//         User.destroy({
-//             where: {
-//                 id: 1
-//             }
-//         })
-//     })
-// }
+deleteUser: (user) => {
+    connection.sync().then(() => {
+        User.destroy({
+            where: {
+                username: user
+            }
+        })
+    });
+    },
 
-// function deleteGame() {
-//     connection.sync().then(() => {
-//         Games.destroy({
-//             where: {
-//                 id: 1
-//             }
-//         });
-//     });
-// }
+addPost: (data) => {
+    connection.sync().then(() => {
+        Posts.create({
+            body: data
+        })
+    })
+}
+}
 
+module.exports = app;

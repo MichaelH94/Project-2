@@ -6,12 +6,20 @@ router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
+router.get('/homepage', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/index.html'));
+});
+
 router.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
+router.get('/create-account', (req, res) => {
+  res.sendFile(path.join(__dirname, '../views/createAccount.html'));
+});
+
 router.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, '/404.html'));
+  res.sendFile(path.join(__dirname, '../views/404.html'));
 });
 
 module.exports = router;

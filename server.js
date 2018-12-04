@@ -6,14 +6,13 @@ const connection = require('./config/connection')
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use(express.static("views"));
+app.use(express.static("public"));
 
 // Routes
-//const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes")
 
-app.use('/', htmlRoutes)
-//app.use('/api', apiRoutes)
+app.use(apiRoutes, htmlRoutes)
 
 // Starting the server, syncing our models ------------------------------------/
   app.listen(PORT, () => {

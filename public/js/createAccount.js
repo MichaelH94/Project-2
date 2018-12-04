@@ -1,23 +1,34 @@
 
-$(document).on('click', '#createAccount', handleCreateAccount);
 
-// call back fnction to initiate adding a user
 let handleCreateAccount = () => {
   event.preventDefault();
 
-  //json object
-  addUser ({
-    username: createUsername,
+  let username = $('#createUsername').val().trim();
+  let name = $('#name').val().trim();
+  let password = $('#creatPassword').val();
+  let age = $('#age').val().trim();
+  let location = $('#location').val().trim();
+  let style = $('#playStyle').val();
+  let platform = $('#platform').val();
+
+  addUser({
+    username: username,
     name: name,
-    password: createPassword,
+    password: password,
     age: age,
     location: location,
-    style: playStyle,
+    style: style,
     platform: platform
   });
+
 }
 
-//post function using sequalize
 let addUser = (userData) => {
-  $.post('/api/Users', userData);
+  $.post('/api/create-account', userData);
 }
+
+$('#createAccount').on('click', handleCreateAccount);
+
+
+
+//post function using sequalize

@@ -8,7 +8,6 @@ const hltb = require('howlongtobeat');
 const hltbService = new hltb.HowLongToBeatService();
 const app = require('./app')
 
-console.log(key.igdbConfig.key)
 
 let gameData = [];
 let hypes = "";
@@ -62,10 +61,9 @@ function hltbSearch(game) {
         timetobeat = result[0].gameplayMain;
         imageUrl = result[0].imageUrl;
         console.log(result)
-        // app.createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb)
+        app.createGame(name, imageUrl, timetobeat, summary, hypes, rating, esrb)
     });
 };
 
 
 
-igdbSearch("Rimworld");
