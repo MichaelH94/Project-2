@@ -57,17 +57,14 @@ router.post('/games', (req, res) => {
   connection.sync().then(() => {
     Games.findAll({
       attributes: ['name', 'imageUrl', 'timetobeat', 'summary', 'rating']
-    }).then(info => {
-      let games = {
-        name: info.name,
-        imageUrl: info.imageUrl,
-        ttb: info.timetobeat,
-        summary: info.summary,
-        rating: info.rating
+    }).then(data => {
+      let hbObj = {
+        games: data
       }
-      res.render('games', games)
+      res.render('games', hbObj)
     })
   })
 })
+
 
 module.exports = router;
