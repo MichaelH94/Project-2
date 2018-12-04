@@ -30,8 +30,19 @@ function createProfile(username) {
   })
 };
 
-let addGame = (game) => {
-  $.post('/add-game', game);
+let addNewGame = () =>{
+  event.preventDefault();
+
+  let newGame = $('#newGame').val();
+  console.log(newGame)
+  addGame(newGame)
+
+};
+
+$('#addnewGame').on('click', addNewGame);
+
+let addGame = (gameData) => {
+  $.post('/add-game', gameData)
 }
 
 });

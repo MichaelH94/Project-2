@@ -1,25 +1,28 @@
 var db = require("../models/app");
-const router = require('express').Router();
-const path = require('path');
+const router = require("express").Router();
+const path = require("path");
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/login.html'));
+router.get("/", (req, res) => {
+  res.render("login");
 });
 
-router.get('/homepage', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/index.html'));
+router.get("/homepage", (req, res) => {
+  // sequelize
+  const info = {
+    age: 20,
+    location: "somewhere",
+    console: "pc"
+  }
+  res.render("index", info);
 });
 
-router.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/login.html'));
+router.get("/login", (req, res) => {
+  res.render("login");
 });
 
-router.get('/create-account', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/createAccount.html'));
-});
 
 router.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/404.html'));
+  res.render("404");
 });
 
 module.exports = router;
