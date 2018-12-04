@@ -19,6 +19,7 @@ let handleCreateAccount = () => {
     platform: platform
   });
 
+
 }
 
 let addUser = (userData) => {
